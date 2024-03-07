@@ -21,7 +21,10 @@ const Card = ({ heroes }) => {
   return (
     <div className="flex gap-4 flex-wrap justify-center container">
       {sortedHeroes.map((hero) => (
-        <div className="card card-compact w-80 bg-base-100 shadow-xl border-2 ">
+        <div
+          key={hero.id}
+          className="card card-compact w-80 bg-base-100 shadow-xl border-2 "
+        >
           <div className="img-hero">
             <Card_imgHero hero={hero} />
           </div>
