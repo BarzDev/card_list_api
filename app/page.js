@@ -12,12 +12,26 @@ export default function Home() {
     setHeroes(data);
   };
 
+  const sortedHeroes = heroes.sort((a, b) =>
+    a.localized_name.localeCompare(b.localized_name)
+  );
+  const filterStr = heroes.filter((hero) => hero.primary_attr === "str");
+  const filterAgi = heroes.filter((hero) => hero.primary_attr === "agi");
+  const filterInt = heroes.filter((hero) => hero.primary_attr === "int");
+  const filterUni = heroes.filter((hero) => hero.primary_attr === "all");
+
   useEffect(() => {
     fetchHero();
   }, []);
   return (
     <main className="">
-      <Layout heroes={heroes} />
+      <Layout
+        heroes={sortedHeroes}
+        str={filterStr}
+        agi={filterAgi}
+        int={filterInt}
+        uni={filterUni}
+      />
     </main>
   );
 }

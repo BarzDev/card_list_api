@@ -12,15 +12,11 @@ const Card = ({ heroes }) => {
   const handleOpenModal = (hero) => {
     document.getElementById("my_modal").showModal();
     setSelectedHero(hero);
-    console.log(hero);
   };
 
-  const sortedHeroes = heroes.sort((a, b) =>
-    a.localized_name.localeCompare(b.localized_name)
-  );
   return (
     <div className="flex gap-4 flex-wrap justify-center container">
-      {sortedHeroes.map((hero) => (
+      {heroes.map((hero) => (
         <div
           key={hero.id}
           className="card card-compact w-80 bg-base-100 shadow-xl border-2 "

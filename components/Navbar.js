@@ -1,43 +1,58 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const Navbar = () => {
+const Navbar = ({ onFilterChange }) => {
   return (
     <div className="navbar bg-neutral text-neutral-content mb-5 sticky top-0 z-50 overflow-x-hidden">
       <div className="navbar-start">
-        <Link href="/" className="btn btn-ghost sm:text-xl text-base">
+        <div
+          className="btn btn-ghost sm:text-xl text-base"
+          onClick={() => onFilterChange("all")}
+        >
           List All Hero
-        </Link>
+        </div>
       </div>
       <div className="navbar-center flex sm:gap-3 gap-0">
-        <Link href="/str" className="btn sm:btn-md btn-sm btn-ghost relative">
+        <div
+          className="btn sm:btn-md btn-sm btn-ghost relative"
+          onClick={() => onFilterChange("str")}
+        >
           <Image
             src={process.env.NEXT_PUBLIC_STR}
             alt="Str Icon"
             fill
             style={{ objectFit: "contain" }}
           />
-        </Link>
-        <div className="btn sm:btn-md btn-sm btn-ghost relative">
+        </div>
+        <div
+          className="btn sm:btn-md btn-sm btn-ghost relative"
+          onClick={() => onFilterChange("agi")}
+        >
           <Image
             src={process.env.NEXT_PUBLIC_AGI}
-            alt="Str Icon"
+            alt="Agi Icon"
             fill
             style={{ objectFit: "contain" }}
           />
         </div>
-        <div className="btn sm:btn-md btn-sm btn-ghost relative">
+        <div
+          className="btn sm:btn-md btn-sm btn-ghost relative"
+          onClick={() => onFilterChange("int")}
+        >
           <Image
             src={process.env.NEXT_PUBLIC_INT}
-            alt="Str Icon"
+            alt="Int Icon"
             fill
             style={{ objectFit: "contain" }}
           />
         </div>
-        <div className="btn sm:btn-md btn-sm btn-ghost relative">
+        <div
+          className="btn sm:btn-md btn-sm btn-ghost relative"
+          onClick={() => onFilterChange("uni")}
+        >
           <Image
             src={process.env.NEXT_PUBLIC_UNI}
-            alt="Str Icon"
+            alt="Uni Icon"
             fill
             style={{ objectFit: "contain" }}
           />
