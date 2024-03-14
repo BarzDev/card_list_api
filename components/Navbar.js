@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const Navbar = ({ onFilterChange }) => {
+const Navbar = ({ onFilterChange, searchValue, handleSearchChange }) => {
   return (
     <div className="navbar bg-neutral text-neutral-content sticky top-0 z-50 overflow-x-hidden">
       <div className="navbar-start">
@@ -59,7 +59,7 @@ const Navbar = ({ onFilterChange }) => {
       </div>
       <div className="navbar-end">
         <div className="flex-none gap-2">
-          <div className="form-control flex flex-row items-center border-2 input input-bordered w-24 md:w-auto cursor-no-drop">
+          <div className="form-control flex flex-row items-center border-2 input input-bordered w-24 md:w-auto ">
             <div className="btn-sm flex items-center hidden md:flex">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -79,8 +79,9 @@ const Navbar = ({ onFilterChange }) => {
             <input
               type="text"
               placeholder="Search"
-              className="cursor-no-drop"
-              disabled
+              className=""
+              value={searchValue}
+              onChange={handleSearchChange}
             />
           </div>
         </div>
