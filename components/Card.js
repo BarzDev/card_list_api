@@ -15,7 +15,7 @@ const Card = ({ heroes }) => {
   };
 
   return (
-    <div className="flex gap-4 flex-wrap justify-center container">
+    <div className="flex gap-4 flex-wrap justify-center container pt-3">
       {heroes.map((hero) => (
         <div
           key={hero.id}

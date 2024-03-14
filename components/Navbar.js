@@ -2,13 +2,13 @@ import Image from "next/image";
 
 const Navbar = ({ onFilterChange }) => {
   return (
-    <div className="navbar bg-neutral text-neutral-content mb-5 sticky top-0 z-50 overflow-x-hidden">
+    <div className="navbar bg-neutral text-neutral-content sticky top-0 z-50 overflow-x-hidden">
       <div className="navbar-start">
         <div
           className="btn btn-ghost sm:text-xl text-base"
           onClick={() => onFilterChange("all")}
         >
-          List All Hero
+          Show All Heroes
         </div>
       </div>
       <div className="navbar-center flex sm:gap-3 gap-0">
