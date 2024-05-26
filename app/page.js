@@ -5,11 +5,13 @@ import Layout from "@/components/Layout";
 
 export default function Home() {
   const [heroes, setHeroes] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const fetchHero = async () => {
     const response = await dotaApi.get();
     const data = await response.data;
     setHeroes(data);
+    setLoading(false);
   };
 
   const sortedHeroes = heroes.sort((a, b) =>
@@ -31,6 +33,7 @@ export default function Home() {
         agi={filterAgi}
         int={filterInt}
         uni={filterUni}
+        loading={loading}
       />
     </main>
   );

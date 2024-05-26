@@ -1,8 +1,9 @@
 import Card from "@/components/Card";
 import Navbar from "./Navbar";
 import { useState } from "react";
+import { Skelton } from "./CardSkelton";
 
-const Layout = ({ heroes, str, agi, int, uni }) => {
+const Layout = ({ heroes, str, agi, int, uni, loading }) => {
   const [activeFilter, setActiveFilter] = useState("");
   const [searchValue, setSearchValue] = useState("");
 
@@ -64,6 +65,7 @@ const Layout = ({ heroes, str, agi, int, uni }) => {
       </div>
 
       <Card heroes={filteredHeroes} />
+      {loading && <Skelton />}
     </div>
   );
 };
